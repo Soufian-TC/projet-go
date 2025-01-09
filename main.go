@@ -80,7 +80,7 @@ func applyGaussianBlur(img image.Image, kernel [][]float64) *image.RGBA {
 
 func main() {
 	// Ouvre l'image d'entrée
-	file, err := os.Open("livre.jpg")
+	file, err := os.Open("images/newYork.jpg")
 	if err != nil {
 		log.Fatalf("Erreur ouverture fichier : %v", err)
 	}
@@ -92,13 +92,13 @@ func main() {
 	}
 
 	// Génère un noyau gaussien large
-	kernel := generateGaussianKernel(15, 5.0) // Taille 15x15, sigma = 5.0
+	kernel := generateGaussianKernel(10, 3.0) // Taille 15x15, sigma = 5.0
 
 	// Applique le flou gaussien
 	blurredImg := applyGaussianBlur(img, kernel)
 
 	// Sauvegarde l'image floutée
-	outFile, err := os.Create("output.jpg")
+	outFile, err := os.Create("images/newYorkApresFlou-10-3.jpg")
 	if err != nil {
 		log.Fatalf("Erreur création fichier sortie : %v", err)
 	}
