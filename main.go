@@ -92,13 +92,13 @@ func main() {
 	}
 
 	// Génère un noyau gaussien large
-	kernel := generateGaussianKernel(10, 3.0) // Taille 15x15, sigma = 5.0
+	kernel := generateGaussianKernel(10, 5.0) // Taille 15x15, sigma = 5.0
 
 	// Applique le flou gaussien
 	blurredImg := applyGaussianBlur(img, kernel)
 
 	// Sauvegarde l'image floutée
-	outFile, err := os.Create("images/newYorkApresFlou-10-3.jpg")
+	outFile, err := os.Create("images/newYorkApresFlou-10-5.jpg")
 	if err != nil {
 		log.Fatalf("Erreur création fichier sortie : %v", err)
 	}
